@@ -1,0 +1,30 @@
+<div class="login-container">
+  <p-card header="Iniciar Sesión" class="login-card">
+    <div class="login-content">
+      <i class="pi pi-user login-icon"></i>
+      <p class="login-description">
+        Haz clic en el botón para acceder al contenido protegido (Login simulado)
+      </p>
+
+      @if (loginSuccess()) {
+        <div class="success-message">
+          <i class="pi pi-check-circle"></i>
+          <p>Inicio de sesión exitoso! Redirigiendo...</p>
+        </div>
+      } @else {
+        <p-button
+          label="Iniciar Sesión como Emanuel Boz"
+          icon="pi pi-sign-in"
+          (onClick)="simulateLogin()"
+          severity="primary"
+          size="large"
+          class="login-button">
+        </p-button>
+      }
+
+      <p class="info-text">
+        Este es un login simulado. No se requiere contraseña.
+      </p>
+    </div>
+  </p-card>
+</div>

@@ -1,0 +1,37 @@
+<div class="home-container">
+  <div class="hero-section">
+    <h1>{{ welcomeMessage() }}</h1>
+    <p class="subtitle">Emanuel Boz - Desarrollador Full Stack</p>
+  </div>
+
+  <div class="features-section">
+    <p-card header="Características del Portafolio">
+      <ul class="features-list">
+        @for (feature of features(); track feature) {
+          <li>
+            <i class="pi pi-check-circle"></i>
+            {{ feature }}
+          </li>
+        }
+      </ul>
+      <div class="cta-buttons">
+        <p-button label="Ver Curriculum" icon="pi pi-user" routerLink="/login" severity="primary"></p-button>
+        <p-button label="Contactar" icon="pi pi-envelope" routerLink="/login" severity="secondary"></p-button>
+      </div>
+    </p-card>
+  </div>
+
+  <div class="info-cards">
+    <p-card header="Sobre Mí">
+      <p>Estudiante de Ingeniería en Sistemas apasionado por el desarrollo web y las tecnologías modernas.</p>
+    </p-card>
+
+    <p-card header="Tecnologías">
+      <p>Angular, TypeScript, PrimeNG, HTML5, CSS3, y más...</p>
+    </p-card>
+
+    <p-card header="Ubicación">
+      <p>Córdoba, Argentina</p>
+    </p-card>
+  </div>
+</div>

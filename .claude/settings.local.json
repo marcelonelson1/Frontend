@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(mv:*)",
+      "Bash(mkdir:*)",
+      "Bash(npx:*)",
+      "Bash(npm install:*)",
+      "Bash(if exist practico2-angularcv-angular rmdir /s /q practico2-angularcv-angular)",
+      "Bash(if not exist practico2-angular mkdir practico2-angular)",
+      "Bash(npm run build:*)",
+      "Bash(timeout 15 npm start)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

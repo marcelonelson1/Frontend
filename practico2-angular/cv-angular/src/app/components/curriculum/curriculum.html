@@ -1,0 +1,54 @@
+<div class="curriculum-container">
+  <h1 class="page-title">Curriculum Vitae</h1>
+  <p class="date-info">Última actualización: {{ currentDate | date:'dd/MM/yyyy' }}</p>
+
+  <!-- Información Personal -->
+  <p-card header="INFORMACIÓN PERSONAL">
+    <div class="info-grid">
+      <div class="info-item">
+        <strong>Nombre:</strong>
+        <span>{{ personalInfo().name | uppercase }}</span>
+      </div>
+      <div class="info-item">
+        <strong>Edad:</strong>
+        <span>{{ personalInfo().age }} años</span>
+      </div>
+      <div class="info-item">
+        <strong>Email:</strong>
+        <span>{{ personalInfo().email }}</span>
+      </div>
+      <div class="info-item">
+        <strong>Teléfono:</strong>
+        <span>{{ personalInfo().phone | phoneFormat }}</span>
+      </div>
+      <div class="info-item">
+        <strong>Ubicación:</strong>
+        <span>{{ personalInfo().location }}</span>
+      </div>
+    </div>
+  </p-card>
+
+  <!-- Educación -->
+  <p-card header="EDUCACIÓN">
+    @for (edu of education(); track edu.institution) {
+      <div class="education-item">
+        <h3>{{ edu.degree }}</h3>
+        <p class="institution">{{ edu.institution }}</p>
+        <p class="period">{{ edu.period }}</p>
+      </div>
+    }
+  </p-card>
+
+  <!-- Habilidades -->
+  <p-card header="HABILIDADES TÉCNICAS">
+    <div class="skills-grid">
+      @for (skill of skills(); track skill.name) {
+        <div class="skill-item">
+          <i class="pi pi-check"></i>
+          <strong>{{ skill.name }}</strong>
+          <span class="skill-level">{{ skill.level }}</span>
+        </div>
+      }
+    </div>
+  </p-card>
+</div>

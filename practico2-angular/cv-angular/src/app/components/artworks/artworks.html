@@ -1,0 +1,58 @@
+<div class="artworks-container">
+  <h1 class="page-title">Galería de Obras de Arte</h1>
+  <p class="subtitle">Datos obtenidos de la API de Art Institute of Chicago</p>
+
+  <div class="actions-bar">
+    <p-button
+      label="Recargar Obras"
+      icon="pi pi-refresh"
+      (onClick)="reloadArtworks()"
+      [loading]="artworksService.loading()">
+    </p-button>
+  </div>
+
+  @if (artworksService.loading()) {
+    <p-card>
+      <div class="loading-message">
+        <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+        <p>Cargando obras de arte...</p>
+      </div>
+    </p-card>
+  } @else {
+    @if (artworksService.artworksList().length > 0) {
+      <p-card>
+        <p-table
+          [value]="artworksService.artworksList()"
+          [paginator]="true"
+          [rows]="10"
+          [tableStyle]="{'min-width': '50rem'}">
+          <ng-template #header>
+            <tr>
+              <th>ID</th>
+              <th>Título</th>
+              <th>Artista</th>
+              <th>Fecha</th>
+              <th>Origen</th>
+            </tr>
+          </ng-template>
+          <ng-template #body let-artwork>
+            <tr>
+              <td>{{ artwork.id }}</td>
+              <td>{{ artwork.title || 'Sin título' }}</td>
+              <td>{{ artwork.artist_display || 'Desconocido' }}</td>
+              <td>{{ artwork.date_display || 'N/A' }}</td>
+              <td>{{ artwork.place_of_origin || 'Desconocido' }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </p-card>
+    } @else {
+      <p-card>
+        <div class="empty-message">
+          <i class="pi pi-info-circle"></i>
+          <p>No hay obras de arte para mostrar</p>
+        </div>
+      </p-card>
+    }
+  }
+</div>

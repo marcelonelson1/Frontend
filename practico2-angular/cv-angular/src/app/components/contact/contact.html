@@ -1,0 +1,122 @@
+<div class="contact-container">
+  <h1 class="page-title">Formulario de Contacto</h1>
+  <p class="subtitle">Envíame un mensaje y te responderé pronto</p>
+
+  <p-card header="Contacto">
+    @if (successMessage()) {
+      <div class="success-alert">
+        <i class="pi pi-check-circle"></i>
+        <p>{{ successMessage() }}</p>
+      </div>
+    }
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+      <!-- Nombre -->
+      <div class="form-field">
+        <label for="name">Nombre *</label>
+        <input
+          pInputText
+          id="name"
+          formControlName="name"
+          placeholder="Tu nombre completo"
+          [class.invalid]="submitted() && name?.invalid"
+        />
+        @if (submitted() && name?.errors) {
+          <small class="error-message">
+            @if (name?.errors?.['required']) {
+              El nombre es requerido
+            }
+            @if (name?.errors?.['minlength']) {
+              El nombre debe tener al menos 3 caracteres
+            }
+          </small>
+        }
+      </div>
+
+      <!-- Email -->
+      <div class="form-field">
+        <label for="email">Email *</label>
+        <input
+          pInputText
+          id="email"
+          formControlName="email"
+          type="email"
+          placeholder="tu@email.com"
+          [class.invalid]="submitted() && email?.invalid"
+        />
+        @if (submitted() && email?.errors) {
+          <small class="error-message">
+            @if (email?.errors?.['required']) {
+              El email es requerido
+            }
+            @if (email?.errors?.['email']) {
+              Debe ser un email válido
+            }
+          </small>
+        }
+      </div>
+
+      <!-- Asunto -->
+      <div class="form-field">
+        <label for="subject">Asunto *</label>
+        <input
+          pInputText
+          id="subject"
+          formControlName="subject"
+          placeholder="Asunto del mensaje"
+          [class.invalid]="submitted() && subject?.invalid"
+        />
+        @if (submitted() && subject?.errors) {
+          <small class="error-message">
+            @if (subject?.errors?.['required']) {
+              El asunto es requerido
+            }
+            @if (subject?.errors?.['minlength']) {
+              El asunto debe tener al menos 5 caracteres
+            }
+          </small>
+        }
+      </div>
+
+      <!-- Mensaje -->
+      <div class="form-field">
+        <label for="message">Mensaje *</label>
+        <textarea
+          id="message"
+          formControlName="message"
+          rows="5"
+          placeholder="Escribe tu mensaje aquí..."
+          [class.invalid]="submitted() && message?.invalid"
+          class="form-textarea">
+        </textarea>
+        @if (submitted() && message?.errors) {
+          <small class="error-message">
+            @if (message?.errors?.['required']) {
+              El mensaje es requerido
+            }
+            @if (message?.errors?.['minlength']) {
+              El mensaje debe tener al menos 10 caracteres
+            }
+          </small>
+        }
+      </div>
+
+      <!-- Botones -->
+      <div class="form-actions">
+        <p-button
+          type="submit"
+          label="Enviar Mensaje"
+          icon="pi pi-send"
+          severity="primary">
+        </p-button>
+        <p-button
+          type="button"
+          label="Limpiar"
+          icon="pi pi-times"
+          severity="secondary"
+          (onClick)="contactForm.reset(); submitted.set(false)">
+        </p-button>
+      </div>
+    </form>
+  </p-card>
+</div>
