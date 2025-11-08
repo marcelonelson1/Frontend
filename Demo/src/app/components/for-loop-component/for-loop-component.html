@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="title">Component with for loop</div>
+    <div class="items-container">
+        <!-- @for goes through an array and renders something 
+         inside de { } for each element -->
+        @for (item of items; track $index) {
+            <app-child-for-loop [inputValue]="item" />
+        }
+    </div>
+</div>

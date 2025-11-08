@@ -1,0 +1,248 @@
+/* HomePage con paleta de colores de NotesPage y 100% responsive */
+.home-page {
+  min-height: 100vh;
+  padding: 2rem 0;
+  background-color: #f9fafb; /* bg-gray-50 igual que NotesPage */
+}
+
+.home-hero {
+  text-align: center;
+  color: #1f2937; /* text-gray-800 */
+  padding: 3rem 1rem 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .home-hero {
+    padding: 4rem 1.5rem 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-hero {
+    padding: 5rem 2rem 3.75rem;
+  }
+}
+
+.home-title {
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #111827; /* text-gray-900 */
+  font-size: 1.875rem; /* 30px en móvil */
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .home-title {
+    font-size: 2.5rem; /* 40px en tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-title {
+    font-size: 3rem; /* 48px en desktop */
+  }
+}
+
+.home-subtitle {
+  margin-bottom: 2rem;
+  color: #6b7280; /* text-gray-500 */
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 640px) {
+  .home-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+.home-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+@media (max-width: 639px) {
+  .home-actions {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+.home-button-primary,
+.home-button-secondary {
+  min-width: 140px;
+  padding: 0.75rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  min-height: 44px; /* Touch-friendly */
+}
+
+@media (min-width: 640px) {
+  .home-button-primary,
+  .home-button-secondary {
+    min-width: 160px;
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .home-button-primary,
+  .home-button-secondary {
+    width: 100%;
+  }
+}
+
+.home-button-primary {
+  background-color: #667eea; /* primary-600 */
+  color: white;
+  border: none;
+}
+
+.home-button-primary:hover {
+  background-color: #5568d3; /* primary-700 */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.home-button-secondary {
+  background-color: white;
+  border: 1px solid #d1d5db; /* border-gray-300 */
+  color: #374151; /* text-gray-700 */
+}
+
+.home-button-secondary:hover {
+  background-color: #f9fafb; /* bg-gray-50 */
+  border-color: #9ca3af;
+}
+
+.home-features {
+  margin-top: 3rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .home-features {
+    margin-top: 4rem;
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-features {
+    margin-top: 5rem;
+  }
+}
+
+.feature-card {
+  padding: 1.5rem;
+  text-align: center;
+  height: 100%;
+  transition: all 0.2s ease;
+  background-color: white;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb; /* border-gray-200 */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 640px) {
+  .feature-card {
+    padding: 2rem;
+  }
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-color: #d1d5db;
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #667eea; /* primary-600 */
+  color: white;
+}
+
+@media (min-width: 640px) {
+  .feature-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.feature-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #111827; /* text-gray-900 */
+  font-size: 1.125rem;
+}
+
+@media (min-width: 640px) {
+  .feature-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.feature-description {
+  color: #6b7280; /* text-gray-500 */
+  line-height: 1.6;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .feature-description {
+    font-size: 0.9375rem;
+  }
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 899px) {
+  .home-features .MuiGrid-root {
+    margin-bottom: 1rem;
+  }
+
+  .home-features .MuiGrid-root:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Mejoras para pantallas muy pequeñas */
+@media (max-width: 375px) {
+  .home-page {
+    padding: 1rem 0;
+  }
+
+  .home-title {
+    font-size: 1.625rem;
+  }
+
+  .feature-card {
+    padding: 1.25rem;
+  }
+
+  .feature-icon {
+    width: 56px;
+    height: 56px;
+  }
+}

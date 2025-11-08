@@ -1,0 +1,13 @@
+@use '../../styles/variables' as *;
+
+.content {
+    height: 220px;
+    width: 460px;
+    color: $dark-text;
+    background-color: $light-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 32px;
+}

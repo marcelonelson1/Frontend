@@ -1,0 +1,71 @@
+@use './styles/variables' as *;
+
+.side-bar {
+    background-color: $sidebar-bg;
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    border-right: solid 1px #4b4b52;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    
+}
+
+.item {
+    width: 100%;
+}
+
+.side-bar-item {
+    color: $sidebar-text;
+    cursor: pointer;
+    text-align: left;
+    padding: 20px 0;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.selected, .side-bar-item:hover {
+    background-color: $hover-bg;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 0px 8px;
+    background-color: $background;
+    min-height: 100%;
+    height: min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin: 0 0;
+    height: 100vh;
+}
+
+.content {
+    color: $light-text;
+    font-size: 32px;
+    text-align: center;
+    border-radius: 8px;
+    padding: 24px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.empty-content {
+    border: solid 1px $light-gray;
+    width: 480px;
+}
+
+.left-alignment {
+    width: 100%;
+}

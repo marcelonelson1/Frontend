@@ -1,0 +1,5 @@
+<div class="container">
+    <div class="title">Component with Output</div>
+    <app-child-output-component (outputEvent)="recieveOutput($event)"/>
+    <div class="title">{{value + ' ' + (counter ? counter + ' times' : '') }}</div>
+</div>

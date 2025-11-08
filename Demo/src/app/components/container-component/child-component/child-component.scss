@@ -1,0 +1,14 @@
+@use '../../../styles/variables' as *;
+
+.child {
+    height: 220px;
+    width: 360px;
+    color: $light-text;
+    background-color: $dark-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 24px;
+    font-size: 24px;
+}

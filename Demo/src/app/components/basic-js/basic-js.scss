@@ -1,0 +1,24 @@
+@use '../../styles/variables' as *;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 12px;
+}
+
+.items-container {
+    padding: 24px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.main-title {
+    padding-left: 24px;
+    font-size: 24px;
+    font-weight: bold;
+    color: $light-text;
+}

@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  /* Custom scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(203 213 225) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+
+  /* Custom button styles */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 focus:ring-4 focus:ring-gray-100;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700 focus:ring-4 focus:ring-red-200;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-sm;
+  }
+
+  .btn-md {
+    @apply px-4 py-2 text-sm;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-base;
+  }
+
+  /* Custom input styles */
+  .input {
+    @apply block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-colors duration-200;
+  }
+
+  .textarea {
+    @apply block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-colors duration-200 resize-none;
+  }
+
+  /* Custom card styles */
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100;
+  }
+
+  .card-hover {
+    @apply hover:shadow-md hover:border-gray-200 transition-all duration-200;
+  }
+
+  /* Animation utilities */
+  .animate-in {
+    animation: animateIn 0.3s ease-out;
+  }
+
+  @keyframes animateIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Ultra responsive utilities */
+  .touch-friendly {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Improved tap targets for mobile */
+  @media (max-width: 640px) {
+    button, .btn {
+      min-height: 40px;
+      touch-action: manipulation;
+    }
+  }
+
+  @media (max-width: 475px) {
+    button, .btn {
+      min-height: 36px;
+    }
+  }
+
+  /* Better text scaling for small screens */
+  @media (max-width: 320px) {
+    .text-xs { font-size: 0.7rem; }
+    .text-sm { font-size: 0.8rem; }
+    .text-base { font-size: 0.9rem; }
+  }
+
+  /* Improved spacing for very small screens */
+  @media (max-width: 375px) {
+    .container { padding-left: 0.75rem; padding-right: 0.75rem; }
+  }
+
+  /* Safe area insets for notched devices */
+  @supports (padding: max(0px)) {
+    header {
+      padding-left: max(1rem, env(safe-area-inset-left));
+      padding-right: max(1rem, env(safe-area-inset-right));
+    }
+  }
+}
+
+/* React Hot Toast custom styles */
+.Toaster__toast {
+  @apply rounded-lg shadow-lg;
+}
+
+.Toaster__toast--success {
+  @apply bg-green-500;
+}
+
+.Toaster__toast--error {
+  @apply bg-red-500;
+}

@@ -1,0 +1,23 @@
+@use '../../../styles/variables' as *;
+
+.child-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.child-value {
+    font-size: 20px;
+    color: $light-text;
+}
+
+.child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border-radius: 12px;
+    color: $light-text;
+    background-color: $dark-gray;
+    flex-direction: column;
+    padding: 24px;
+}

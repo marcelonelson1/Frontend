@@ -9,7 +9,8 @@
       "Bash(if exist practico2-angularcv-angular rmdir /s /q practico2-angularcv-angular)",
       "Bash(if not exist practico2-angular mkdir practico2-angular)",
       "Bash(npm run build:*)",
-      "Bash(timeout 15 npm start)"
+      "Bash(timeout 15 npm start)",
+      "Bash(tree:*)"
     ],
     "deny": [],
     "ask": []

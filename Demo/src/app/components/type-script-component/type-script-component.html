@@ -1,0 +1,10 @@
+<div class="container">
+    <!-- Use something from ts as content using {{}} -->
+    <div class="simple-title">{{ title }}</div>
+    <!-- Use something from ts as as an input for another html element or 
+     component with [] -->
+<img class="thumb" [src]="imageSrc" alt="Cargando imagen" loading="eager"/>
+<!-- Recieve an event from a component and set some behavior 
+ from the ts to happen with the () -->
+<button class="simple-button" (click)="changeTitle()">Change title</button>
+</div>

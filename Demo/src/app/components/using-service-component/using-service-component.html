@@ -1,0 +1,6 @@
+<div class="container">
+    <p class="empty-text">Login and select an item from to start the demo!</p>
+    <button class="simple-button" (click)="doLogin()">
+        {{ loginService.isLoggedIn() ? 'Logout' : 'Login' }}
+    </button>
+</div>

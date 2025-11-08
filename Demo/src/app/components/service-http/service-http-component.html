@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="title">Items from http call</div>
+    <div class="items-container">
+        <!-- Using  the service signals to display data. Note that in html we don't use this-->
+        @for (item of exampleService.artworks(); track $index) {
+            <app-art-item [inputValue]="item" />
+        }
+    </div>
+    <div class="buttons-container">
+        <!-- Calling the methods from the service-->
+        <button class="simple-button" 
+        [disabled]="exampleService.isLoading() || exampleService.page() === 1" (click)="exampleService.prevPage()">
+            Previous Page
+        </button>
+        <div class="page-number">{{exampleService.page()}}</div>
+        <button class="simple-button" 
+        [disabled]="exampleService.isLoading() || exampleService.page() === exampleService.maxPages()" 
+        (click)="exampleService.nextPage()">
+            Next Page
+        </button>
+    </div>
+</div>

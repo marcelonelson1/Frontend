@@ -1,0 +1,61 @@
+@use '../../styles/variables' as *;
+
+.container {
+    height: 680px;
+    width: 720px;
+    background-color: $light-gray;
+    color: $dark-text;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    gap: 24px;
+}
+
+.items-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.title {
+    font-size: 32px;
+}
+
+.page-number{
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.simple-button {
+    padding: 8px 12px;
+    width: 180px;
+    background-color: $dark-gray;
+    color: $light-text;
+    border-radius: 24px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(48, 39, 39, 0.3);
+}
+
+.simple-button:hover {
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+.simple-button:disabled {
+    background-color: lighten($dark-gray, 10%);
+    color: $light-text;
+    box-shadow: 0 4px 6px rgba(48, 39, 39, 0.15);
+    cursor: not-allowed;
+    opacity: 0.8;
+}

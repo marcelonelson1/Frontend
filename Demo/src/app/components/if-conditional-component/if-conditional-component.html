@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="title">Component with If Conditional</div>
+    <button (click)="mostrar = !mostrar" class="simple-button">
+        {{ mostrar? 'Hide component' : 'Show component' }}
+    </button>
+    <!-- @if renders the content inside { } only when the condition set is true -->
+    @if (mostrar) {
+        <app-if-conditional-child/>
+    }
+</div>

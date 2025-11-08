@@ -1,0 +1,35 @@
+@use '../../styles/variables' as *;
+
+.container {
+    height: 420px;
+    width: 680px;
+    background-color: $light-gray;
+    color: $dark-text;
+    display: grid;
+    grid-template-rows: 1fr 1fr 5fr;
+    grid-template-columns: 632px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    border-radius: 12px;
+    padding-top: 48px;
+    gap: 24px;
+}
+
+.title {
+    font-size: 32px;
+}
+
+.simple-button {
+    padding: 8px 12px;
+    width: 180px;
+    background-color:   $dark-gray;
+    color: $light-text;
+    border-radius: 24px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(48, 39, 39, 0.3);
+}
+
+.simple-button:hover {
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+}
