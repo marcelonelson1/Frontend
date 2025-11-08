@@ -1,0 +1,98 @@
+<div class="about-page">
+  <!-- Header Section -->
+  <section class="about-header">
+    <div class="container">
+      <div class="header-content">
+        <h1>Sobre Mí</h1>
+        <p class="lead">Desarrollador Backend apasionado por crear soluciones escalables y eficientes</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="about-content">
+    <div class="container">
+      <div class="content-grid">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <app-contact-info></app-contact-info>
+          <app-languages></app-languages>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+          <!-- Personal Story -->
+          <div class="personal-story card">
+            <h2>Mi Historia</h2>
+            <div class="story-content">
+              <p>
+                Soy Marcelo Nelson, un estudiante de 3er año de Ingeniería en Sistemas en la Universidad Católica de Córdoba. 
+                Mi pasión por la programación comenzó hace 2 años cuando descubrí el mundo del desarrollo backend.
+              </p>
+              <p>
+                Me especializo en Go (Golang), un lenguaje que me fascina por su simplicidad, performance y escalabilidad. 
+                He trabajado en múltiples proyectos aplicando patrones como Clean Architecture y MVC, siempre buscando 
+                escribir código limpio y mantenible.
+              </p>
+              <p>
+                Actualmente estoy disponible para nuevas oportunidades donde pueda aportar mis conocimientos y seguir 
+                creciendo como desarrollador.
+              </p>
+            </div>
+          </div>
+
+          <!-- Education Section -->
+          <app-education></app-education>
+
+          <!-- Soft Skills -->
+          <div class="soft-skills card">
+            <h2>Habilidades Blandas</h2>
+            <div class="skills-grid">
+              @for (skill of softSkills; track skill.skill) {
+                <div class="skill-item">
+                  <div class="skill-icon">{{skill.icon}}</div>
+                  <div class="skill-content">
+                    <h3>{{skill.skill}}</h3>
+                    <p>{{skill.description}}</p>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+
+          <!-- Values -->
+          <div class="values card">
+            <h2>Valores en el Desarrollo</h2>
+            <div class="values-grid">
+              @for (value of personalValues; track value) {
+                <div class="value-item">
+                  <span class="value-indicator">✓</span>
+                  <span class="value-text">{{value}}</span>
+                </div>
+              }
+            </div>
+          </div>
+
+          <!-- Current Focus -->
+          <div class="current-focus card">
+            <h2>Enfoque Actual</h2>
+            <div class="focus-content">
+              <div class="focus-item">
+                <h3>🎯 Especialización</h3>
+                <p>Profundizando en Go, microservicios y arquitecturas distribuidas</p>
+              </div>
+              <div class="focus-item">
+                <h3>📈 Crecimiento</h3>
+                <p>Estudiando patrones avanzados de diseño y mejores prácticas de DevOps</p>
+              </div>
+              <div class="focus-item">
+                <h3>🌟 Objetivos</h3>
+                <p>Busco oportunidades para aplicar mis conocimientos en proyectos reales</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

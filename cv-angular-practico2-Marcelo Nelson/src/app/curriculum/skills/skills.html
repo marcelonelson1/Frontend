@@ -1,0 +1,19 @@
+<p-card header="Stack / Habilidades Técnicas" styleClass="technical-skills">
+  <div class="skills-grid">
+    @for (category of skillCategories; track category.title) {
+      <div class="skill-category">
+        <h3>{{category.title}}</h3>
+        <div class="skill-tags">
+          @for (skill of category.skills; track skill.name) {
+            <p-chip 
+              [label]="skill.name + (skill.isPrimary ? ' ★' : '')"
+              [title]="'Nivel: ' + skill.level"
+              [styleClass]="'skill-chip ' + skill.level + (skill.isPrimary ? ' primary' : '')"
+              icon="pi pi-{{ skill.level === 'advanced' ? 'star-fill' : skill.level === 'intermediate' ? 'star-half-fill' : 'star' }}">
+            </p-chip>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</p-card>

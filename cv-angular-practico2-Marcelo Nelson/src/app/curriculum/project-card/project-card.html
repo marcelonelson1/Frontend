@@ -1,0 +1,22 @@
+<p-card
+  [header]="proyecto.titulo"
+  styleClass="project-card"
+  (click)="onProjectClick()">
+  <ng-template pTemplate="header">
+    <img [src]="proyecto.imagen" [alt]="proyecto.titulo" class="project-image">
+  </ng-template>
+
+  <p class="project-description">
+    {{proyecto.descripcion}}
+  </p>
+
+  <ng-template pTemplate="footer">
+    <div *ngIf="showTags" class="project-tags">
+      <p-chip
+        *ngFor="let tag of proyecto.tags"
+        [label]="tag"
+        styleClass="skill-chip">
+      </p-chip>
+    </div>
+  </ng-template>
+</p-card>

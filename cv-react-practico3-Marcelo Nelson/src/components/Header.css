@@ -1,0 +1,97 @@
+.header-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 16px;
+}
+
+.header-title {
+  flex-grow: 1;
+  font-weight: 600;
+  font-size: 1.25rem;
+  min-width: 150px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.header-nav-button {
+  color: white;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .header-title {
+    font-size: 1.1rem;
+  }
+
+  .header-nav {
+    gap: 6px;
+  }
+
+  .header-nav-button {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+
+  .header-nav-button .MuiButton-startIcon {
+    margin-right: 4px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .header-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+
+  .header-title {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .header-nav {
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .header-nav-button {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    min-width: auto;
+  }
+
+  .header-nav-button .MuiButton-startIcon {
+    margin-right: 2px;
+  }
+
+  .header-nav-button .MuiButton-startIcon svg {
+    font-size: 1rem;
+  }
+}
+
+/* Very small mobile */
+@media (max-width: 400px) {
+  .header-nav-button {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+
+  .header-nav-button span:not(.MuiButton-startIcon) {
+    display: none;
+  }
+
+  .header-nav-button .MuiButton-startIcon {
+    margin: 0;
+  }
+}

@@ -1,0 +1,23 @@
+<section class="languages card">
+  <h2>Idiomas</h2>
+  <div class="language-list">
+    @for (language of languages; track language.name) {
+      <div class="language-item">
+        <div class="language-header">
+          <span class="language-name">{{language.name}}</span>
+          <span class="language-level" [ngClass]="language.levelClass">{{language.level}}</span>
+        </div>
+        <div class="language-progress">
+          <div class="progress-bar">
+            <div 
+              class="progress-fill" 
+              [style.width.%]="language.percentage"
+              [ngClass]="language.levelClass">
+            </div>
+          </div>
+          <span class="percentage">{{language.percentage}}%</span>
+        </div>
+      </div>
+    }
+  </div>
+</section>

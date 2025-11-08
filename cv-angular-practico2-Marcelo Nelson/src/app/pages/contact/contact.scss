@@ -1,0 +1,675 @@
+// === ESTILOS LIMPIOS PARA CONTACT PAGE CON PRIMENG ===
+
+.contact-page {
+  min-height: 100vh;
+}
+
+// Header
+.contact-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.header-content {
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .lead {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: white;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    color: white;
+  }
+}
+
+// Contact Methods
+.contact-methods {
+  padding: 4rem 0;
+  background: var(--background-secondary);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+  }
+}
+
+.methods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.method-card {
+  background: var(--background);
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+  }
+
+  .method-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .method-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .method-value {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    line-height: 1.4;
+    padding: 0 1rem;
+    margin-top: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+}
+
+// === SECCIÓN DEL FORMULARIO ===
+.contact-form-section {
+  padding: 4rem 0;
+  background: var(--background);
+
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0 1rem;
+    }
+  }
+}
+
+.form-container {
+  .form-header {
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+  }
+}
+
+// === FORMULARIO CON PRIMENG ===
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-section {
+  h3 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    
+    i {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .full-width {
+    grid-column: 1 / -1;
+  }
+}
+
+// === ESTILOS PRIMENG LIMPIOS ===
+:host ::ng-deep {
+  // Card del formulario
+  .contact-form-card {
+    .p-card {
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+    }
+    
+    .p-card-body {
+      padding: 2rem;
+    }
+  }
+
+  // Form fields - sin float labels, usando labels tradicionales
+  .form-field {
+    margin-bottom: 1.5rem;
+    
+    label {
+      display: block;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .required {
+      color: #dc2626;
+    }
+  }
+
+  // Inputs
+  .p-inputtext {
+    width: 100%;
+    padding: 0.875rem;
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background: var(--background);
+    color: var(--text-primary);
+    font-family: inherit;
+    
+    &:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      outline: none;
+    }
+    
+    &.ng-invalid.ng-touched {
+      border-color: #dc2626;
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+    }
+    
+    &::placeholder {
+      color: var(--text-light);
+    }
+  }
+
+  // Textarea
+  textarea.p-inputtext {
+    resize: vertical !important;
+    min-height: 120px !important;
+    line-height: 1.5 !important;
+    font-family: inherit !important;
+    
+    &:focus {
+      border-color: var(--primary-color) !important;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+      outline: none !important;
+    }
+    
+    &.ng-invalid.ng-touched {
+      border-color: #dc2626 !important;
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+    }
+  }
+
+  // Selects - Estructura correcta de PrimeNG
+  .p-select {
+    width: 100% !important;
+    position: relative !important;
+    
+    // El wrapper/trigger del select
+    &, .p-select-trigger {
+      width: 100% !important;
+      border: 2px solid var(--border-light) !important;
+      border-radius: var(--radius-md) !important;
+      background: var(--background) !important;
+      min-height: 3.5rem !important;
+      display: flex !important;
+      align-items: center !important;
+      padding: 0 !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+      
+      &:focus, &:focus-within {
+        border-color: var(--primary-color) !important;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+        outline: none !important;
+      }
+      
+      &.ng-invalid {
+        border-color: #dc2626 !important;
+        box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+      }
+    }
+    
+    // Label del select (texto mostrado)
+    .p-select-label {
+      flex: 1 !important;
+      padding: 0.875rem !important;
+      color: var(--text-primary) !important;
+      font-size: 1rem !important;
+      font-weight: normal !important;
+      text-align: left !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      
+      &.p-placeholder {
+        color: var(--text-light) !important;
+      }
+    }
+    
+    // Flecha dropdown
+    .p-select-dropdown-icon {
+      position: absolute !important;
+      right: 0.875rem !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      color: var(--text-secondary) !important;
+      font-size: 0.875rem !important;
+      pointer-events: none !important;
+      z-index: 2 !important;
+    }
+    
+    // Cuando el select está deshabilitado
+    &.p-disabled {
+      opacity: 0.6 !important;
+      cursor: not-allowed !important;
+      
+      .p-select-label {
+        cursor: not-allowed !important;
+      }
+    }
+  }
+  
+  // Panel dropdown - con z-index alto para evitar superposiciones
+  .p-select-overlay {
+    border: 1px solid var(--border-light) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: var(--shadow-lg) !important;
+    background: var(--background) !important;
+    z-index: 9999 !important;
+    opacity: 1 !important;
+    
+    .p-select-items {
+      background: var(--background) !important;
+      
+      .p-select-item {
+        padding: 0.875rem !important;
+        font-size: 1rem !important;
+        background: var(--background) !important;
+        color: var(--text-primary) !important;
+        opacity: 1 !important;
+        
+        &:hover, &.p-select-item-group:hover, &.p-select-item-highlight, &.p-focus {
+          background: white !important;
+          color: var(--primary-color) !important;
+          opacity: 1 !important;
+          font-weight: 600 !important;
+          border-radius: 4px !important;
+          transition: all 0.2s ease !important;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        &.p-select-item-selected {
+          background: var(--primary-color) !important;
+          color: white !important;
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+
+  // Errores
+  .p-error {
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: block;
+    font-weight: 500;
+  }
+
+  // Mensajes
+  .p-message {
+    border-radius: var(--radius-md);
+    margin: 1rem 0;
+    
+    &.p-message-error {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #dc2626;
+    }
+  }
+
+  // Botones
+  .p-button {
+    padding: 1rem 2rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    
+    &:not(.p-button-secondary) {
+      background: var(--primary-color);
+      color: white;
+      
+      &:hover:not(:disabled) {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+      
+      &:disabled {
+        background: var(--text-light);
+        transform: none;
+        box-shadow: none;
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+    }
+    
+    &.p-button-secondary {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 2px solid var(--border-medium);
+      
+      &:hover {
+        background: var(--background-tertiary);
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+        transform: translateY(-2px);
+      }
+    }
+    
+    .p-button-icon {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+// Character count
+.character-count {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+  text-align: right;
+}
+
+// Form actions
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 3rem; // Espacio extra para evitar superposición con dropdowns
+  padding-top: 2rem; // Padding adicional
+  border-top: 1px solid var(--border-light);
+  position: relative;
+  z-index: 1; // Z-index bajo para que dropdowns aparezcan encima
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-top: 4rem; // Aún más espacio en móviles
+    
+    :host ::ng-deep .p-button {
+      width: 100%;
+    }
+  }
+}
+
+// Success message
+.success-message {
+  text-align: center;
+  padding: 2rem;
+  
+  .success-content {
+    max-width: 400px;
+    margin: 0 auto;
+    
+    .success-icon {
+      font-size: 3rem;
+      color: #10b981;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    h3 {
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+// === SIDEBAR ===
+.contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+  
+  @media (max-width: 1024px) {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.response-time {
+  background: var(--background);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-light);
+  }
+}
+
+.response-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.response-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--background-tertiary);
+  border-radius: var(--radius-md);
+
+  .response-icon {
+    font-size: 1.2rem;
+  }
+
+  strong {
+    color: var(--text-primary);
+  }
+}
+
+// === RESPONSIVE ===
+@media (max-width: 768px) {
+  .contact-header {
+    padding: 3rem 0;
+
+    .header-content h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .contact-methods {
+    padding: 3rem 0;
+    
+    .container {
+      padding: 0 1rem;
+    }
+  }
+
+  .methods-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .contact-form-section {
+    padding: 3rem 0;
+  }
+}
+
+// === ESTILOS GLOBALES PARA DROPDOWNS PRIMENG ===
+// Estos estilos se aplican globalmente porque los dropdowns se renderizan fuera del componente
+
+// SOLUCION UNIVERSAL PARA HOVER EN DROPDOWNS - APLICADA GLOBALMENTE
+::ng-deep .p-select-overlay div:hover,
+::ng-deep .p-select-panel div:hover,
+::ng-deep [role="listbox"] div:hover,
+::ng-deep [role="option"]:hover,
+::ng-deep .p-select-item:hover,
+::ng-deep [data-pc-section="item"]:hover {
+  background-color: white !important;
+  color: var(--primary-color) !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.p-select-overlay {
+  border: 1px solid var(--border-light) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
+  background: var(--background) !important;
+  z-index: 9999 !important;
+  opacity: 1 !important;
+  max-height: 300px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  
+  .p-select-items {
+    background: var(--background) !important;
+    border-radius: var(--radius-md) !important;
+    
+    .p-select-item {
+      padding: 0.875rem !important;
+      font-size: 1rem !important;
+      background: var(--background) !important;
+      color: var(--text-primary) !important;
+      opacity: 1 !important;
+      border: none !important;
+      cursor: pointer !important;
+      transition: background-color 0.2s ease !important;
+      
+      &:hover, &.p-select-item-group:hover, &.p-select-item-highlight, &.p-focus {
+        background: white !important;
+        color: var(--primary-color) !important;
+        opacity: 1 !important;
+        font-weight: 600 !important;
+        border-radius: 4px !important;
+        transition: all 0.2s ease !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+      }
+      
+      &.p-select-item-selected {
+        background: var(--primary-color) !important;
+        color: white !important;
+        opacity: 1 !important;
+      }
+      
+      &:first-child {
+        border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
+      }
+      
+      &:last-child {
+        border-radius: 0 0 var(--radius-md) var(--radius-md) !important;
+      }
+    }
+  }
+}

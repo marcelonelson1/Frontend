@@ -1,0 +1,50 @@
+<div class="home-page">
+  <!-- Hero Section -->
+  <app-hero></app-hero>
+
+  <!-- Featured Projects Section -->
+  <section class="featured-projects">
+    <div class="container">
+      <div class="section-header">
+        <h2>Proyectos Destacados</h2>
+        <p>Una selección de mis trabajos más relevantes</p>
+        <a routerLink="/projects" class="view-all-btn">Ver todos los proyectos →</a>
+      </div>
+      
+      <div class="projects-grid">
+        @for (proyecto of featuredProjects; track proyecto.titulo) {
+          <app-project-card
+            [proyecto]="proyecto"
+            [showTags]="true"
+            (projectClick)="onProjectClicked($event)">
+          </app-project-card>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Preview -->
+  <section class="skills-preview">
+    <div class="container">
+      <div class="section-header">
+        <h2>Tecnologías</h2>
+        <p>Mi stack tecnológico actual</p>
+      </div>
+      <app-skills></app-skills>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>¿Tienes un proyecto en mente?</h2>
+        <p>Estoy disponible para nuevas oportunidades y colaboraciones</p>
+        <div class="cta-actions">
+          <a routerLink="/contact" class="btn btn-primary">Contactar</a>
+          <a routerLink="/about" class="btn btn-secondary">Conocer más</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

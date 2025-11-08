@@ -1,0 +1,257 @@
+<div class="contact-page">
+  <!-- Header Section -->
+  <section class="contact-header">
+    <div class="container">
+      <div class="header-content">
+        <h1>Contacto</h1>
+        <p class="lead">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+        <p class="subtitle">Estoy disponible para nuevas oportunidades y colaboraciones</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Methods -->
+  <section class="contact-methods">
+    <div class="container">
+      <h2>Formas de contacto</h2>
+    </div>
+    <div class="methods-grid">
+      @for (method of contactMethods; track method.title) {
+        <div class="method-card" (click)="openContactMethod(method)">
+          <div class="method-icon">{{method.icon}}</div>
+          <h3>{{method.title}}</h3>
+          <p class="method-description">{{method.description}}</p>
+          <span class="method-value">{{method.value}}</span>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact-form-section">
+    <div class="container">
+      <div class="form-container">
+        <div class="form-header">
+          <h2>Enviar mensaje</h2>
+          <p>Completa el formulario y te responderé lo antes posible</p>
+        </div>
+
+        <p-card styleClass="contact-form-card">
+          @if (submitSuccess) {
+            <div class="success-message">
+              <div class="success-content">
+                <i class="pi pi-check-circle success-icon"></i>
+                <h3>¡Mensaje enviado correctamente!</h3>
+                <p>Gracias por contactarme. Te responderé en breve.</p>
+                <p-button 
+                  (onClick)="resetForm()" 
+                  label="Enviar otro mensaje"
+                  icon="pi pi-plus"
+                  severity="secondary">
+                </p-button>
+              </div>
+            </div>
+          } @else {
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+              <!-- Información Personal -->
+              <div class="form-section">
+                <h3><i class="pi pi-user"></i> Información personal</h3>
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label for="name">Nombre completo <span class="required">*</span></label>
+                    <input 
+                      pInputText
+                      id="name" 
+                      formControlName="name"
+                      [class.ng-invalid]="isFieldInvalid('name')"
+                      placeholder="Tu nombre completo">
+                    @if (getFieldError('name')) {
+                      <small class="p-error">{{getFieldError('name')}}</small>
+                    }
+                  </div>
+                  
+                  <div class="form-field">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input 
+                      pInputText
+                      id="email" 
+                      formControlName="email"
+                      [class.ng-invalid]="isFieldInvalid('email')"
+                      placeholder="tu@email.com">
+                    @if (getFieldError('email')) {
+                      <small class="p-error">{{getFieldError('email')}}</small>
+                    }
+                  </div>
+                  
+                  <div class="form-field">
+                    <label for="phone">Teléfono</label>
+                    <input 
+                      pInputText
+                      id="phone" 
+                      formControlName="phone"
+                      [class.ng-invalid]="isFieldInvalid('phone')"
+                      placeholder="Tu número de teléfono">
+                    @if (getFieldError('phone')) {
+                      <small class="p-error">{{getFieldError('phone')}}</small>
+                    }
+                  </div>
+                  
+                  <div class="form-field">
+                    <label for="company">Empresa/Organización</label>
+                    <input 
+                      pInputText
+                      id="company" 
+                      formControlName="company"
+                      placeholder="Nombre de tu empresa">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Detalles del Proyecto -->
+              <div class="form-section">
+                <h3><i class="pi pi-briefcase"></i> Detalles del proyecto</h3>
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label for="subject">Asunto <span class="required">*</span></label>
+                    <p-select 
+                      id="subject" 
+                      formControlName="subject"
+                      [options]="subjectOptions"
+                      optionLabel="label"
+                      optionValue="value"
+                      styleClass="w-full"
+                      [class.ng-invalid]="isFieldInvalid('subject')"
+                      placeholder="Selecciona un asunto">
+                    </p-select>
+                    @if (getFieldError('subject')) {
+                      <small class="p-error">{{getFieldError('subject')}}</small>
+                    }
+                  </div>
+
+                  <div class="form-field">
+                    <label for="priority">Prioridad</label>
+                    <p-select 
+                      id="priority" 
+                      formControlName="priority"
+                      [options]="priorityOptions"
+                      optionLabel="label"
+                      optionValue="value"
+                      styleClass="w-full"
+                      placeholder="Selecciona la prioridad">
+                    </p-select>
+                  </div>
+                  
+                  <div class="form-field full-width">
+                    <label for="message">Mensaje <span class="required">*</span></label>
+                    <textarea 
+                      id="message" 
+                      formControlName="message"
+                      [class.ng-invalid]="isFieldInvalid('message')"
+                      rows="5" 
+                      cols="30"
+                      class="w-full p-inputtext"
+                      placeholder="Cuéntame más sobre tu proyecto o consulta..."></textarea>
+                    @if (getFieldError('message')) {
+                      <small class="p-error d-block">{{getFieldError('message')}}</small>
+                    }
+                    <small class="character-count">
+                      {{formControls['message'].value?.length || 0}}/1000 caracteres
+                    </small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Preferencias de Contacto -->
+              <div class="form-section">
+                <h3><i class="pi pi-cog"></i> Preferencias</h3>
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label for="preferredContact">Método de contacto preferido</label>
+                    <p-select 
+                      id="preferredContact" 
+                      formControlName="preferredContact"
+                      [options]="preferredContactOptions"
+                      optionLabel="label"
+                      optionValue="value"
+                      styleClass="w-full"
+                      placeholder="¿Cómo prefieres que te contacte?">
+                    </p-select>
+                  </div>
+
+                  <div class="form-field">
+                    <label for="availability">Disponibilidad horaria</label>
+                    <p-select 
+                      id="availability" 
+                      formControlName="availability"
+                      [options]="availabilityOptions"
+                      optionLabel="label"
+                      optionValue="value"
+                      styleClass="w-full"
+                      placeholder="¿Cuál es tu horario preferido?">
+                    </p-select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Error Message -->
+              @if (submitError) {
+                <p-message severity="error" [text]="submitError" styleClass="mb-3"></p-message>
+              }
+
+              <!-- Submit Button -->
+              <div class="form-actions">
+                <p-button 
+                  type="submit" 
+                  label="Enviar mensaje"
+                  icon="pi pi-send"
+                  [loading]="isSubmitting"
+                  [disabled]="contactForm.invalid"
+                  size="large"
+                  styleClass="mr-2">
+                </p-button>
+                
+                <p-button 
+                  type="button" 
+                  (onClick)="resetForm()" 
+                  label="Limpiar formulario"
+                  icon="pi pi-refresh"
+                  severity="secondary"
+                  size="large">
+                </p-button>
+              </div>
+            </form>
+          }
+        </p-card>
+      </div>
+
+      <!-- Sidebar with contact info -->
+      <div class="contact-sidebar">
+        <app-contact-info></app-contact-info>
+        
+        <div class="response-time card">
+          <h3>Tiempo de respuesta</h3>
+          <div class="response-info">
+            <div class="response-item">
+              <span class="response-icon">⚡</span>
+              <div>
+                <strong>Email:</strong> 24-48 horas
+              </div>
+            </div>
+            <div class="response-item">
+              <span class="response-icon">💬</span>
+              <div>
+                <strong>WhatsApp:</strong> Mismo día
+              </div>
+            </div>
+            <div class="response-item">
+              <span class="response-icon">💼</span>
+              <div>
+                <strong>LinkedIn:</strong> 2-3 días
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

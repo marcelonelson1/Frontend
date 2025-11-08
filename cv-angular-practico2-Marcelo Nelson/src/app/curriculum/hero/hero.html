@@ -1,0 +1,66 @@
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <div class="profile-section">
+        <div class="profile-image">
+          <div class="avatar">{{profileData.initials}}</div>
+          <div class="status-indicator" title="{{profileData.currentStatus}}"></div>
+        </div>
+        <div class="social-stats">
+          @for (stat of socialStats; track stat.label) {
+            <div class="stat-item">
+              <span class="stat-value">{{stat.value}}</span>
+              <span class="stat-label">{{stat.label}}</span>
+            </div>
+          }
+        </div>
+      </div>
+      
+      <div class="hero-text">
+        <h1>{{profileData.name}}</h1>
+        <p class="role">{{profileData.role}}</p>
+        <p class="hero-description">{{profileData.description}}</p>
+        
+        <div class="hero-actions">
+          @for (action of heroActions; track action.label) {
+            @if (action.route) {
+              <a 
+                [routerLink]="action.route" 
+                [class]="action.isPrimary ? 'btn btn-primary' : 'btn btn-secondary'">
+                {{action.label}}
+              </a>
+            } @else {
+              <button 
+                (click)="executeAction(action.action!)"
+                [class]="action.isPrimary ? 'btn btn-primary' : 'btn btn-secondary'">
+                {{action.label}}
+              </button>
+            }
+          }
+        </div>
+
+        <div class="hero-highlights">
+          <div class="highlight-item">
+            <span class="highlight-icon">🚀</span>
+            <span>Enfocado en Go (Golang)</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">💡</span>
+            <span>Clean Architecture & MVC</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">🎯</span>
+            <span>APIs RESTful</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Elementos decorativos -->
+  <div class="hero-decoration">
+    <div class="floating-element element-1"></div>
+    <div class="floating-element element-2"></div>
+    <div class="floating-element element-3"></div>
+  </div>
+</section>

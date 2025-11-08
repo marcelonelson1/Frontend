@@ -1,0 +1,283 @@
+.main-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.navbar {
+  padding: var(--spacing-sm) 0;
+  
+  @media (max-width: 768px) {
+    padding: 0.75rem 0;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  
+  @media (max-width: 768px) {
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+.nav-brand {
+  color: white;
+  min-width: 0; // Previene overflow
+  
+  h1 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    margin: 0 0 0.125rem 0;
+    line-height: 1.2;
+    color: white;
+  }
+  
+  .subtitle {
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+    opacity: 0.9;
+    font-weight: 400;
+    line-height: 1.2;
+    color: white;
+    
+    @media (max-width: 480px) {
+      display: none; // Oculta en móviles muy pequeños
+    }
+  }
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--spacing-md);
+  align-items: center;
+  
+  @media (max-width: 1024px) {
+    gap: var(--spacing-sm);
+  }
+  
+  @media (max-width: 768px) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--primary-dark);
+    flex-direction: column;
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-lg);
+    
+    &.mobile-open {
+      display: flex;
+    }
+  }
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem var(--spacing-sm);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  position: relative;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  
+  @media (max-width: 1024px) {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
+  }
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+    padding: var(--spacing-sm);
+    font-size: 1rem;
+  }
+  
+  &:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+  }
+  
+  &.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 2px;
+      background: white;
+      border-radius: 1px;
+      
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  gap: 3px;
+  position: relative;
+  z-index: 1001;
+  
+  @media (max-width: 768px) {
+    display: flex;
+  }
+  
+  span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+  
+  &.active {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+  }
+  
+  &:hover span {
+    background: rgba(255, 255, 255, 0.8);
+  }
+}
+
+// Animaciones para el menú móvil
+@media (max-width: 768px) {
+  .nav-menu {
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Botones de autenticación
+.auth-buttons {
+  .btn-login, .btn-logout {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+  }
+
+  .btn-login {
+    background: rgba(46, 204, 113, 0.2);
+    border-color: rgba(46, 204, 113, 0.5);
+    
+    &:hover {
+      background: rgba(46, 204, 113, 0.3);
+    }
+  }
+
+  .btn-logout {
+    background: rgba(231, 76, 60, 0.2);
+    border-color: rgba(231, 76, 60, 0.5);
+    
+    &:hover {
+      background: rgba(231, 76, 60, 0.3);
+    }
+  }
+}
+
+// Estilos específicos para botones PrimeNG en header
+:host ::ng-deep .custom-header-btn {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: white !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: var(--radius-md) !important;
+  font-weight: 500 !important;
+  font-size: 0.85rem !important;
+  transition: all 0.3s ease !important;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-1px) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3) !important;
+  }
+}
+
+:host ::ng-deep .custom-header-btn.p-button-secondary {
+  background: rgba(231, 76, 60, 0.2) !important;
+  border-color: rgba(231, 76, 60, 0.5) !important;
+  
+  &:hover {
+    background: rgba(231, 76, 60, 0.3) !important;
+    border-color: rgba(231, 76, 60, 0.6) !important;
+  }
+}
+
+// Mejora de accesibilidad
+.nav-link:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.mobile-menu-toggle:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}

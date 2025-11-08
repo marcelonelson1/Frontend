@@ -1,0 +1,33 @@
+<section class="education card">
+  <h2>Educación</h2>
+  <div class="timeline">
+    @for (item of educationItems; track item.id) {
+      <div class="timeline-item" [ngClass]="getStatusClass(item.status)">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div class="timeline-date">{{item.period}}</div>
+            <span class="status-badge" [ngClass]="getStatusClass(item.status)">
+              {{getStatusText(item.status)}}
+            </span>
+          </div>
+          <h3>{{item.title}}</h3>
+          <p class="institution">{{item.institution}}</p>
+          @if (item.description) {
+            <p class="description">{{item.description}}</p>
+          }
+          @if (item.achievements && item.achievements.length > 0) {
+            <div class="achievements">
+              <h4>Logros destacados:</h4>
+              <ul>
+                @for (achievement of item.achievements; track achievement) {
+                  <li>{{achievement}}</li>
+                }
+              </ul>
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>
