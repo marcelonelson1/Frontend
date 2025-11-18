@@ -38,8 +38,9 @@ services:
       - DB_NAME=notes_db
       - PORT=8080
       - GIN_MODE=release
-      - ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001
+      - ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001,http://localhost
       - AUTO_MIGRATE=true
+      - JWT_SECRET=my-super-secret-jwt-key-change-this-in-production-2024
     ports:
       - "8080:8080"
     depends_on:
