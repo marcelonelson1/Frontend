@@ -57,6 +57,7 @@ After running the setup script:
 - **React 18** - UI library
 - **TypeScript** - Type safety
 - **Tailwind CSS** - Utility-first CSS framework
+- **Material-UI (MUI)** - Component library for React 🌟
 - **React Query** - Data fetching and caching
 - **Heroicons** - Beautiful icons
 - **React Hot Toast** - Notifications
