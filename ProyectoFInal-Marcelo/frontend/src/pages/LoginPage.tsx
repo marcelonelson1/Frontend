@@ -132,15 +132,12 @@ const LoginPage: React.FC = () => {
               )}
             </Button>
 
-            <Box className="login-credentials-box">
-              <Typography variant="body2" className="credentials-title">
-                <strong>Usuarios de prueba:</strong>
-              </Typography>
-              <Typography variant="body2" className="credentials-item">
-                • Usuario: <code>admin</code> | Contraseña: <code>admin123</code>
-              </Typography>
-              <Typography variant="body2" className="credentials-item">
-                • Usuario: <code>user</code> | Contraseña: <code>user123</code>
+            <Box className="login-links">
+              <Typography variant="body2" className="login-link-text">
+                ¿No tienes una cuenta?{' '}
+                <Link to="/register" className="login-link">
+                  Regístrate aquí
+                </Link>
               </Typography>
             </Box>
           </Box>
