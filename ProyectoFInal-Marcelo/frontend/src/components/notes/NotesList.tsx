@@ -1,7 +1,7 @@
 import React from 'react';
-import { Note } from '../../types/note.types';
-import NoteCard from './NoteCard';
-import Loading from '../common/Loading';
+import { Note } from '@/types/note';
+import NoteCard from '@components/notes/NoteCard';
+import Loading from '@components/common/Loading';
 import { DocumentTextIcon } from '@heroicons/react/24/outline';
 
 interface NotesListProps {

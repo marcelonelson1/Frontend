@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from 'react-query';
-import { noteService } from '../services/noteService';
-import { CreateNoteRequest, UpdateNoteRequest, NoteFilters } from '../types/note.types';
+import { noteService } from '@services/noteService';
+import { CreateNoteRequest, UpdateNoteRequest, NoteFilters } from '@/types/note';
 import toast from 'react-hot-toast';
 
 export const useNotes = (filters: NoteFilters = {}) => {

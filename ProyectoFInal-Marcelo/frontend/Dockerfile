@@ -3,6 +3,10 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
+# Accept build arguments for Vite environment variables
+ARG VITE_API_BASE_URL=http://localhost:8080/api/v1
+ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
+
 # Copy package files
 COPY package.json package-lock.json* ./
 
@@ -24,8 +28,8 @@ RUN apk --no-cache add wget
 # Copy custom nginx config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copy built app from builder stage
-COPY --from=builder /app/build /usr/share/nginx/html
+# Copy built app from builder stage (Vite builds to 'dist' directory)
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Create non-root user for security
 RUN adduser -D -s /bin/sh appuser

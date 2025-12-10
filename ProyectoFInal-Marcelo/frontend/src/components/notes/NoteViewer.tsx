@@ -1,7 +1,7 @@
 import React from 'react';
-import { Note } from '../../types/note.types';
+import { Note } from '@/types/note';
 import { CalendarIcon, TagIcon, ArchiveBoxIcon } from '@heroicons/react/24/outline';
-import CategoryBadge from '../categories/CategoryBadge';
+import CategoryBadge from '@components/categories/CategoryBadge';
 
 interface NoteViewerProps {
   note: Note;

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Note } from '../../types/note.types';
+import { Note } from '@/types/note';
 import { PencilIcon, TrashIcon, ArchiveBoxIcon, ArchiveBoxXMarkIcon, EyeIcon } from '@heroicons/react/24/outline';
-import CategoryBadge from '../categories/CategoryBadge';
+import CategoryBadge from '@components/categories/CategoryBadge';
 
 interface NoteCardProps {
   note: Note;

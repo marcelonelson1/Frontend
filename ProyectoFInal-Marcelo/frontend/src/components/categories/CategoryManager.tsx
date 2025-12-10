@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { PlusIcon, PencilIcon, TrashIcon, TagIcon } from '@heroicons/react/24/outline';
-import { useCategories, useCreateCategory, useUpdateCategory, useDeleteCategory } from '../../hooks/useCategories';
-import { Category } from '../../types/note.types';
-import CategoryBadge from './CategoryBadge';
-import Modal from '../common/Modal';
+import { useCategories, useCreateCategory, useUpdateCategory, useDeleteCategory } from '@hooks/useCategories';
+import { Category } from '@/types/note';
+import CategoryBadge from '@components/categories/CategoryBadge';
+import Modal from '@components/common/Modal';
 import toast from 'react-hot-toast';
 
 interface CategoryFormData {

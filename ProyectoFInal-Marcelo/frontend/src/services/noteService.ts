@@ -1,6 +1,6 @@
-import api from './api';
-import { Note, CreateNoteRequest, UpdateNoteRequest, NoteFilters } from '../types/note.types';
-import { ApiResponse, PaginatedResponse } from '../types/api.types';
+import api from '@services/api';
+import { Note, CreateNoteRequest, UpdateNoteRequest, NoteFilters } from '@/types/note';
+import { ApiResponse, PaginatedResponse } from '@/types/api';
 
 export const noteService = {
   // Create a new note

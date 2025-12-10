@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from 'react-query';
-import { categoryService, CreateCategoryRequest, UpdateCategoryRequest } from '../services/categoryService';
+import { categoryService, CreateCategoryRequest, UpdateCategoryRequest } from '@services/categoryService';
 import toast from 'react-hot-toast';
 
 export const useCategories = () => {

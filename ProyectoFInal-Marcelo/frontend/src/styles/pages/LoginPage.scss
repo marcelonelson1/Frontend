@@ -1,0 +1,78 @@
+.login {
+  &-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  &-paper {
+    padding: 32px;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  &-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &-icon {
+    background-color: #1976d2;
+    color: white;
+    border-radius: 50%;
+    padding: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  &-subtitle {
+    color: #666;
+    margin-top: 8px;
+  }
+
+  &-error {
+    margin-bottom: 16px;
+  }
+
+  &-form {
+    width: 100%;
+  }
+
+  &-button {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    padding: 12px;
+  }
+
+  &-links {
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  &-link-text {
+    color: #666;
+  }
+
+  &-link {
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #1565c0;
+      text-decoration: underline;
+    }
+  }
+}

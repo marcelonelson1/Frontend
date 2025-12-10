@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { ChevronDownIcon, PlusIcon } from '@heroicons/react/24/outline';
-import { useCategories } from '../../hooks/useCategories';
-import { Category } from '../../types/note.types';
-import CategoryBadge from './CategoryBadge';
-import Loading from '../common/Loading';
+import { useCategories } from '@hooks/useCategories';
+import { Category } from '@/types/note';
+import CategoryBadge from '@components/categories/CategoryBadge';
+import Loading from '@components/common/Loading';
 
 interface CategorySelectorProps {
   selectedCategories: Category[];

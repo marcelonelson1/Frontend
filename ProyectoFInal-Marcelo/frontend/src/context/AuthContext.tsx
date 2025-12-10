@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
-import { authService, LoginRequest, RegisterRequest } from '../services/authService';
+import { authService, LoginRequest, RegisterRequest } from '@services/authService';
 import toast from 'react-hot-toast';
 
 interface User {

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { MagnifyingGlassIcon, FunnelIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import { useCategories } from '../../hooks/useCategories';
-import { NoteFilters } from '../../types/note.types';
-import CategoryBadge from '../categories/CategoryBadge';
+import { useCategories } from '@hooks/useCategories';
+import { NoteFilters } from '@/types/note';
+import CategoryBadge from '@components/categories/CategoryBadge';
 
 interface NoteFiltersProps {
   filters: NoteFilters;

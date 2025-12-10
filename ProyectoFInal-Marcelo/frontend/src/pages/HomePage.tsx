@@ -6,8 +6,8 @@ import {
   Category as CategoryIcon,
   Login as LoginIcon,
 } from '@mui/icons-material';
-import { useAuth } from '../context/AuthContext';
-import './HomePage.css';
+import { useAuth } from '@context/AuthContext';
+import '@styles/pages/HomePage.scss';
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();

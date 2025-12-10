@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Note, CreateNoteRequest, UpdateNoteRequest } from '../../types/note.types';
-import CategorySelector from '../categories/CategorySelector';
-import Loading from '../common/Loading';
+import { Note, CreateNoteRequest, UpdateNoteRequest } from '@/types/note';
+import CategorySelector from '@components/categories/CategorySelector';
+import Loading from '@components/common/Loading';
 
 interface NoteFormProps {
   note?: Note;

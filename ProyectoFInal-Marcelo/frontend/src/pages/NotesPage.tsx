@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Note, NoteFilters } from '../types/note.types';
-import { useNotes, useCreateNote, useUpdateNote, useDeleteNote, useArchiveNote } from '../hooks/useNotes';
-import Header from '../components/common/Header';
-import NotesList from '../components/notes/NotesList';
-import NotesFilters from '../components/notes/NoteFilters';
-import Modal from '../components/common/Modal';
-import NoteForm from '../components/notes/NoteForm';
-import CategoryManager from '../components/categories/CategoryManager';
-import NoteViewer from '../components/notes/NoteViewer';
+import { Note, NoteFilters } from '@/types/note';
+import { useNotes, useCreateNote, useUpdateNote, useDeleteNote, useArchiveNote } from '@hooks/useNotes';
+import Header from '@components/common/Header';
+import NotesList from '@components/notes/NotesList';
+import NotesFilters from '@components/notes/NoteFilters';
+import Modal from '@components/common/Modal';
+import NoteForm from '@components/notes/NoteForm';
+import CategoryManager from '@components/categories/CategoryManager';
+import NoteViewer from '@components/notes/NoteViewer';
 import toast from 'react-hot-toast';
 
 type TabType = 'active' | 'archived';

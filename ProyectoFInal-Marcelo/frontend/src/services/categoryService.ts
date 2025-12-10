@@ -1,6 +1,6 @@
-import api from './api';
-import { Category } from '../types/note.types';
-import { ApiResponse } from '../types/api.types';
+import api from '@services/api';
+import { Category } from '@/types/note';
+import { ApiResponse } from '@/types/api';
 
 export interface CreateCategoryRequest {
   name: string;

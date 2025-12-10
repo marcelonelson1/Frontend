@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Box, Typography, Button, Paper } from '@mui/material';
 import { ArrowBack as BackIcon } from '@mui/icons-material';
-import './AboutPage.css';
+import '@styles/pages/AboutPage.scss';
 
 const AboutPage: React.FC = () => {
   const navigate = useNavigate();

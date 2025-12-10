@@ -12,8 +12,8 @@ import {
   CircularProgress,
 } from '@mui/material';
 import { PersonAdd as RegisterIcon } from '@mui/icons-material';
-import { useAuth } from '../context/AuthContext';
-import './RegisterPage.css';
+import { useAuth } from '@context/AuthContext';
+import '@styles/pages/RegisterPage.scss';
 
 interface RegisterFormData {
   username: string;

@@ -12,8 +12,8 @@ import {
   CircularProgress,
 } from '@mui/material';
 import { LockOutlined as LockIcon } from '@mui/icons-material';
-import { useAuth } from '../context/AuthContext';
-import './LoginPage.css';
+import { useAuth } from '@context/AuthContext';
+import '@styles/pages/LoginPage.scss';
 
 interface LoginFormData {
   username: string;

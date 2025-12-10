@@ -4,14 +4,16 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { AuthProvider } from './context/AuthContext';
-import PrivateRoute from './components/common/PrivateRoute';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import AboutPage from './pages/AboutPage';
-import NotesPage from './pages/NotesPage';
-import './styles/globals.css';
+import { AuthProvider } from '@context/AuthContext';
+import PrivateRoute from '@components/common/PrivateRoute';
+import MainLayout from '@components/layout/MainLayout';
+import PublicLayout from '@components/layout/PublicLayout';
+import HomePage from '@pages/HomePage';
+import LoginPage from '@pages/LoginPage';
+import RegisterPage from '@pages/RegisterPage';
+import AboutPage from '@pages/AboutPage';
+import NotesPage from '@pages/NotesPage';
+import '@styles/globals.scss';
 
 // Create a client
 const queryClient = new QueryClient({
@@ -44,21 +46,25 @@ function App() {
           <Router>
             <div className="App">
               <Routes>
-                {/* Rutas públicas */}
-                <Route path="/" element={<HomePage />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/register" element={<RegisterPage />} />
-                <Route path="/about" element={<AboutPage />} />
+                {/* Rutas públicas con PublicLayout */}
+                <Route element={<PublicLayout />}>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/login" element={<LoginPage />} />
+                  <Route path="/register" element={<RegisterPage />} />
+                  <Route path="/about" element={<AboutPage />} />
+                </Route>
 
-                {/* Rutas privadas */}
-                <Route
-                  path="/notes"
-                  element={
-                    <PrivateRoute>
-                      <NotesPage />
-                    </PrivateRoute>
-                  }
-                />
+                {/* Rutas privadas con MainLayout */}
+                <Route element={<MainLayout />}>
+                  <Route
+                    path="/notes"
+                    element={
+                      <PrivateRoute>
+                        <NotesPage />
+                      </PrivateRoute>
+                    }
+                  />
+                </Route>
 
                 {/* Redirección por defecto */}
                 <Route path="*" element={<Navigate to="/" replace />} />
